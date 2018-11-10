@@ -8,9 +8,9 @@ class Login extends React.Component {
     super(props)
 
     this.state = {
-      email: "",
+      email: __DEV__ ? "frank@infinite.red" : "",
       emailError: false,
-      password: "",
+      password: __DEV__ ? "password" : "",
       passwordError: false
     }
   }
@@ -52,7 +52,7 @@ class Login extends React.Component {
 
   render() {
     const { emailError, passwordError } = this.state
-
+    const { navigation } = this.props
     return (
       <Container>
         <Content>
@@ -64,6 +64,7 @@ class Login extends React.Component {
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoCorrect={false}
+                value={__DEV__ && "frank@infinite.red"}
               />
             </Item>
             <Item error={passwordError}>
@@ -73,11 +74,15 @@ class Login extends React.Component {
                 autoCapitalize="none"
                 autoCorrect={false}
                 secureTextEntry
+                value={__DEV__ && "password"}
               />
             </Item>
           </Form>
           <Button full onPress={this.handleSubmit}>
             <Text>Sign In</Text>
+          </Button>
+          <Button full transparent onPress={() => navigation.navigate("Register")}>
+            <Text>Sign Up</Text>
           </Button>
         </Content>
       </Container>

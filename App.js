@@ -14,8 +14,8 @@ import Login from "./Login"
 import Profile from "./Profile"
 
 const AuthStack = StackNavigator({
-  Register: { screen: Register, navigationOptions: { headerTitle: "Register" } },
-  Login: { screen: Login, navigationOptions: { headerTitle: "Login" } }
+  Login: { screen: Login, navigationOptions: { headerTitle: "Login" } },
+  Register: { screen: Register, navigationOptions: { headerTitle: "Register" } }
 })
 
 const cache = new InMemoryCache()

@@ -15,9 +15,11 @@ class Logout extends React.Component {
       <Container>
         <Content>
           {currentUser && (
-            <View>
-              <Text>{currentUser._id}</Text>
-              <Text>{currentUser.email}</Text>
+            <View style={{ alignItems: "center" }}>
+              <View>
+                <Text style={{ textAlign: "left" }}>User ID: {currentUser._id}</Text>
+                <Text style={{ textAlign: "left" }}>User Email: {currentUser.email}</Text>
+              </View>
             </View>
           )}
           <Button full onPress={this.handleLogout}>

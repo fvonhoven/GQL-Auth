@@ -16,7 +16,7 @@ class Logout extends React.Component {
         <Content>
           {currentUser && (
             <View style={{ alignItems: "center" }}>
-              <View>
+              <View style={{ justifyContent: "space-around", marginVertical: 20, height: 50 }}>
                 <Text style={{ textAlign: "left" }}>User ID: {currentUser._id}</Text>
                 <Text style={{ textAlign: "left" }}>User Email: {currentUser.email}</Text>
               </View>
